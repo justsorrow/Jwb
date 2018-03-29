@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form name="myform" action="" method="post">
+			<table align="center">
+				<caption>会说话的QQ竞拍咯！</caption>
+				<tr>
+					<td>竞拍价格：</td>
+					<td><input type="text" name="prise" value="" /></td>
+				</tr>
+				<tr>
+					<td>购买数量：</td>
+					<td><input type="text" name="number" value="" /></td>
+				</tr>
+				<tr>
+					<td>支付方式：</td>
+					<td><select name="way">
+					<option>--请选择支付方式--</option>
+					<option value="1">银行转账—-打6折</option>
+					<option value="2">电话支付--打7折</option>
+					<option value="3">邮政汇款--打8折</option>
+					<option value="4">Q币支付--打9折</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td>预计总价：</td>
+					<td><input>
+					</td>
+				</tr>
+				<tr >
+			        <td colspan="">
+			        <input type="button" value="计算看看" " onclick="calc()"/>
+			</td>
+			</table>
+		</form>
+			<script type="text/javascript">
+			function calc(){
+				//获取文本框中的数值
+				var num1 = document.myform.prise.value;
+				var num2 = document.myform.number.value;
+				var num3 = document.myform.num3.value;
+				if(prise=="" || number=="" || num3=="" ){
+					alert("计算的数不能为空!");
+					return; //结束当前函数
+				}
+
+				if(isNaN(prise) || isNaN(number) || isNaN(num3)){
+					alert("计算的数必须是数值!");
+					return;
+				}
+				//计算结果   NaN --> Not a Number 
+				var result = 0.0;
+				
+				result = parseFloat(prise)*parseFloat(number)*parseFloat(num3);
+				//将结果存入"结果"文本框中
+				document.myform.result.value=result;
+			}
+			</script>
+			
+	</body>
+</html>
